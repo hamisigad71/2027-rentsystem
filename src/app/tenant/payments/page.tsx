@@ -209,7 +209,7 @@ export default function TenantPaymentsPage() {
                         You will receive an automated STK prompt on your mobile device.
                       </p>
                     </div>
-                    <Button suppressHydrationWarning className="w-full bg-linear-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 py-7 text-lg font-black shadow-xl shadow-green-500/30 rounded-2xl transform active:scale-[0.98] transition-all">
+                    <Button className="w-full bg-linear-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 py-7 text-lg font-black shadow-xl shadow-green-500/30 rounded-2xl transform active:scale-[0.98] transition-all">
                       Authorize KSh {amount.toLocaleString()}
                     </Button>
                   </div>
@@ -256,7 +256,7 @@ export default function TenantPaymentsPage() {
                         </div>
                       </div>
                     </div>
-                    <Button suppressHydrationWarning className="w-full bg-linear-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 py-7 text-lg font-black shadow-xl shadow-blue-500/30 rounded-2xl transform active:scale-[0.98] transition-all">
+                    <Button className="w-full bg-linear-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 py-7 text-lg font-black shadow-xl shadow-blue-500/30 rounded-2xl transform active:scale-[0.98] transition-all">
                       Authorize KSh {amount.toLocaleString()}
                     </Button>
                   </div>
@@ -302,7 +302,7 @@ export default function TenantPaymentsPage() {
                         <p className="text-[11px] text-blue-100/70 mt-1 leading-relaxed">Please capture your transaction receipt or enter the reference code below once your transfer is complete.</p>
                       </div>
                     </div>
-                    <Button suppressHydrationWarning className="w-full bg-slate-900 hover:bg-slate-800 py-7 text-lg font-black shadow-xl rounded-2xl transform active:scale-[0.98] transition-all">
+                    <Button className="w-full bg-slate-900 hover:bg-slate-800 py-7 text-lg font-black shadow-xl rounded-2xl transform active:scale-[0.98] transition-all">
                       Confirm Bank Transfer
                     </Button>
                   </div>

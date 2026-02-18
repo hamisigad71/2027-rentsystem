@@ -27,7 +27,7 @@ function LoginForm({ onRoleChange }: { onRoleChange: (role: "landlord" | "tenant
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    login(role);
+    login({ role });
   };
 
   const setRole = (newRole: "landlord" | "tenant") => {
@@ -232,7 +232,7 @@ function HeroSection({ role }: { role: "landlord" | "tenant" }) {
   );
 }
 
-export default function LoginPage() {
+function LoginContent() {
   const searchParams = useSearchParams();
   const initialRole = searchParams.get("role") === "tenant" ? "tenant" : "landlord";
   const [role, setRole] = useState<"landlord" | "tenant">(initialRole);
@@ -241,12 +241,18 @@ export default function LoginPage() {
     <div className="min-h-screen grid lg:grid-cols-2 bg-white">
       {/* Left Side: Form */}
       <div className="flex flex-col items-center justify-center py-12 px-6 lg:px-8">
-        <Suspense fallback={<div className="animate-pulse w-full max-w-md h-96 bg-gray-100 rounded-2xl"></div>}>
-          <LoginForm onRoleChange={(newRole) => setRole(newRole)} />
-        </Suspense>
+        <LoginForm onRoleChange={(newRole) => setRole(newRole)} />
       </div>
 
       <HeroSection role={role} />
     </div>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-white"><div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div></div>}>
+      <LoginContent />
+    </Suspense>
   );
 }
